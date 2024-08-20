@@ -48,6 +48,10 @@ app.use((error, req, res, next) => {
   });
 });
 
+app.get(`/netlify/functions/api`, (req, res) => {
+  return res.send("hello world");
+});
+
 connectMongo();
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
